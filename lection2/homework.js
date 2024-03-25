@@ -74,7 +74,7 @@
 //         let uniqueArr = new Set(arr);
 //         return console.log(Array.from(uniqueArr))
 //     } else {
-//         return console.log("В getUniqArray был передан невалидный параметр. Аргумент arr должен быть массивом чисел")
+//         return new Error("В getUniqArray был передан невалидный параметр. Аргумент arr должен быть массивом чисел")
 //     }
 // }
 
@@ -91,7 +91,7 @@
 //         }, []);
 //         return console.log(uniqueArr)
 //     } else {
-//         return console.log("В getUniqArray был передан невалидный параметр. Аргумент arr должен быть массивом чисел")
+//         return new Error("В getUniqArray был передан невалидный параметр. Аргумент arr должен быть массивом чисел")
 //     }
 // }
 
@@ -107,7 +107,7 @@
 //         }
 //         return console.log(uniqueArr)
 //     } else {
-//         return console.log("В getUniqArray был передан невалидный параметр. Аргумент arr должен быть массивом чисел")
+//         return new Error("В getUniqArray был передан невалидный параметр. Аргумент arr должен быть массивом чисел")
 //     }
 // }
 // getUniqArray([1, 2, 3, 1, 3, 5, 3, 5, 6])
