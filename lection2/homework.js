@@ -69,46 +69,48 @@
 
 // Первая реализация с помощью коллекции
 // function getUniqArray(arr) {
-//     const checkType = arr.every((el) => typeof(el) == 'number' && !isNaN(el));
-//     if (checkType) {
-//         let uniqueArr = new Set(arr);
-//         return console.log(Array.from(uniqueArr))
-//     } else {
-//         return new Error("В getUniqArray был передан невалидный параметр. Аргумент arr должен быть массивом чисел")
-//     }
+//   const checkType = arr.every((el) => typeof el == "number" && !isNaN(el));
+//   if (!checkType) {
+//     throw Error(
+//       "В getUniqArray был передан невалидный параметр. Аргумент arr должен быть массивом чисел"
+//     );
+//   }
+//   const uniqueArr = new Set(arr);
+//   return Array.from(uniqueArr);
 // }
 
 // Вторая реализация с помощью массивов
 // function getUniqArray(arr) {
-//     const checkType = arr.every((el) => typeof(el) == 'number' && !isNaN(el));
-//     if (checkType) {
-//         const uniqueArr = arr.reduce((acc, item) => {
-//             if (acc.includes(item)) {
-//                 return acc
-//             } else {
-//                 return [...acc, item]
-//             }
-//         }, []);
-//         return console.log(uniqueArr)
+//   const checkType = arr.every((el) => typeof el == "number" && !isNaN(el));
+//   if (!checkType) {
+//     throw Error(
+//       "В getUniqArray был передан невалидный параметр. Аргумент arr должен быть массивом чисел"
+//     );
+//   }
+//   const uniqueArr = arr.reduce((acc, item) => {
+//     if (acc.includes(item)) {
+//       return acc;
 //     } else {
-//         return new Error("В getUniqArray был передан невалидный параметр. Аргумент arr должен быть массивом чисел")
+//       return [...acc, item];
 //     }
+//   }, []);
+//   return uniqueArr;
 // }
 
 // третья реализация с помощью массивов
 // function getUniqArray(arr) {
-//     const checkType = arr.every((el) => typeof(el) == 'number' && !isNaN(el));
-//     if (checkType) {
-//         const uniqueArr = [];
-//         for (let num of arr) {
-//             if (!uniqueArr.includes(num)){
-//                 uniqueArr.push(num)
-//             }
-//         }
-//         return console.log(uniqueArr)
-//     } else {
-//         return new Error("В getUniqArray был передан невалидный параметр. Аргумент arr должен быть массивом чисел")
+//   const checkType = arr.every((el) => typeof el == "number" && !isNaN(el));
+//   if (!checkType) {
+//     throw Error(
+//       "В getUniqArray был передан невалидный параметр. Аргумент arr должен быть массивом чисел"
+//     );
+//   }
+//   const uniqueArr = [];
+//   for (let num of arr) {
+//     if (!uniqueArr.includes(num)) {
+//       uniqueArr.push(num);
 //     }
+//   }
+//   return uniqueArr;
 // }
-// getUniqArray([1, 2, 3, 1, 3, 5, 3, 5, 6])
-
+//  console.log(getUniqArray([1, 2, 3, 1, 3, 5, 3, 5, 6]))
