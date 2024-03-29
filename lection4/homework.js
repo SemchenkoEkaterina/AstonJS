@@ -121,25 +121,36 @@
 //// 1, 3, 4, 5, 10, 6, 7, 8, 2, 9
 ///////////////////////////////////
 // 9)*
-// function foo(callback) {
-//     setTimeout(() => {
-//         callback('A');
-//     }, Math.random() * 100);
-// }
-// function bar(callback) {
-//     setTimeout(() => {
-//         callback('B');
-//     }, Math.random() * 100);
-// }
-// function baz(callback) {
-//     setTimeout(() => {
-//         callback('C');
-//     }, Math.random() * 100);
-// }
-//// 1 способ
-// const promiseFn = function(fun) {
-//  return new Promise((res) => fun(res))
-// }
+function foo(callback) {
+    setTimeout(() => {
+        callback('A');
+    }, Math.random() * 100);
+}
+function bar(callback) {
+    setTimeout(() => {
+        callback('B');
+    }, Math.random() * 100);
+}
+function baz(callback) {
+    setTimeout(() => {
+        callback('C');
+    }, Math.random() * 100);
+}
+// 1 способ
+const promiseFn = function(fun) {
+ return new Promise((res) => fun(res))
+}
+async function promiseFn1(){
+    const pr1 = await promiseFn(foo);
+    console.log(pr1);
+    const pr2 = await promiseFn(bar);
+    console.log(pr2);
+    const pr3 = await promiseFn(baz);
+    console.log(pr3);
+}
+promiseFn1()
+
+//// 3 способ
 // promiseFn(foo).then((res) => console.log(res))
 // .then(() => promiseFn(bar)).then((res) => console.log(res))
 // .then(() => promiseFn(baz)).then((res) => console.log(res))
