@@ -12,7 +12,6 @@
 // c.z = 3;
 // console.log(a.z); // 2
 
-
 // 2.
 
 // const promise = new Promise(() => {
@@ -29,8 +28,6 @@
 // console.log(Fn1.constructor === Fn2.constructor) // true
 
 // console.log(Fn1.prototype === Fn2.prototype) // false
-
-
 
 //3.
 
@@ -60,13 +57,26 @@
 //     fly() {
 //         console.log(`Flying high! ${this.name}`)
 //     }
-    
+
 // }
 
-// const animal = new Animal("Дженни");
-// const bird = new Bird("Воробей");
+function Animal(name) {
+  this.name = name;
+  this.speak = function () {
+    console.log(`Some generic sound ${this.name}`);
+  };
+}
 
-// animal.speak(); // "Some generic sound"
-// bird.speak();   // "Some generic sound"
-// bird.fly();     // "Flying high!"
+function Bird(name) {
+  Animal.call(this, name);
+  this.fly = function () {
+    console.log(`Flying high! ${this.name}`);
+  };
+}
 
+const animal = new Animal("Дженни");
+const bird = new Bird("Воробей");
+
+animal.speak(); // "Some generic sound"
+bird.speak(); // "Some generic sound"
+bird.fly(); // "Flying high!"
