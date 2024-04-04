@@ -69,12 +69,17 @@ Animal.prototype.speak = function () {
 
 function Bird(name) {
   Animal.call(this, name);
-}
-Bird.prototype = Object.create(Animal.prototype)
+};
+
+Bird.prototype = Object.create(Animal.prototype);
+
+Bird.prototype.constructor = Bird;
 
 Bird.prototype.fly = function () {
   console.log(`Flying high! ${this.name}`);
 };
+
+
 
 
 const animal = new Animal("Дженни");
