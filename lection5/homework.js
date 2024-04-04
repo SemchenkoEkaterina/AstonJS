@@ -62,17 +62,20 @@
 
 function Animal(name) {
   this.name = name;
-  this.speak = function () {
-    console.log(`Some generic sound ${this.name}`);
-  };
 }
+Animal.prototype.speak = function () {
+  console.log(`Some generic sound ${this.name}`);
+};
 
 function Bird(name) {
   Animal.call(this, name);
-  this.fly = function () {
-    console.log(`Flying high! ${this.name}`);
-  };
 }
+Bird.prototype = Object.create(Animal.prototype)
+
+Bird.prototype.fly = function () {
+  console.log(`Flying high! ${this.name}`);
+};
+
 
 const animal = new Animal("Дженни");
 const bird = new Bird("Воробей");
